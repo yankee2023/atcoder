@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "array": "cpp",
+        "string_view": "cpp"
     }
 }
