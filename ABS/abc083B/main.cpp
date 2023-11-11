@@ -15,8 +15,11 @@ int main() {
         int num = i;
         // 各桁の数字の和を計算
         while (num) {
+            // 1の位の数字を求める
             digree = num % 10;
             place_sum += digree;
+
+            // 桁を落とす
             num = num / 10;
         }
 
