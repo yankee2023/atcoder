@@ -1,6 +1,6 @@
 # APG4b
 
-「C++入門 AtCoder Programming Guide for beginners (APG4b) - AtCoder」の演習問題を解いた。
+「C++入門 AtCoder Programming Guide for beginners (APG4b) - AtCoder」の修行。
 
 EX26は未実施。
 
