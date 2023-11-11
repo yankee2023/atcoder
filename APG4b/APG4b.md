@@ -16,6 +16,10 @@
 O(1) < O(logN) < O(N) < O(NlogN) < O(N^2) < O(2^N)
 ```
 
+# 演算子の優先順位
+
+ビット演算に用いる演算子は優先順位が低いものが多いので、明示的に`()`でくくる。
+
 # リンク
 
 - [C++入門 AtCoder Programming Guide for beginners (APG4b) - AtCoder](https://atcoder.jp/contests/apg4b)
