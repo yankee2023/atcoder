@@ -2,6 +2,8 @@
     "files.associations": {
         "bitset": "cpp",
         "array": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "chrono": "cpp",
+        "variant": "cpp"
     }
 }
