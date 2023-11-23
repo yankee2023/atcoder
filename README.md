@@ -17,4 +17,6 @@
 | [ABS](./ABS/ABS.md)       | AtCoder Beginners Selection                   |
 | [ABC](./ABC/ABC.md)       | AtCoder Beginners Contest                     |
 
-# 
+# アルゴリズム
+- ランレングス圧縮  
+  可逆圧縮。連続して現れる符号を繰り返しの回数を表す値に置き換える方式。欠点はデータが連続していないと符号化後のデータがもとのデータより膨らんでしまうこと。
