@@ -4,6 +4,7 @@
         "array": "cpp",
         "string_view": "cpp",
         "chrono": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "iostream": "cpp"
     }
 }
