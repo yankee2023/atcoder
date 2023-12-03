@@ -2,6 +2,7 @@
 using namespace std;
 
 /*
+    計算量はO(N^2): (1 <= N <= 2*10^5)
     愚直にforループ回すとTLE
 */
 int main() {
