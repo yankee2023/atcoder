@@ -6,37 +6,21 @@ int main() {
     cin >> M >> D;
     cin >> y >> m >> d;
 
-    // tomorrow
-    d++;
-
-    int over_d = 0, over_m = 0;
-    if (D == 1 && M == 1) {
-        m += (d-1);
-        d = 1;
-        y += (m-1);
+    /* y年m月d日が
+      ・年末ならy+1年1月1日
+      ・年末でない月末ならy年m+1月1日
+      ・月末でなければy年1月d+1日
+    */
+    if (D == d && M == m) {
         m = 1;
-    } else if (D == 1) {
-        m += (d-1);
         d = 1;
-        over_m = m / M;
-        m = m % M;
-        y += over_m;
-    } else if (M == 1) {
-        over_d = d / D;
-        d = d % D;
-        m += over_d;
-        y += (m-1);
-        m = 1;
+        cout << y + 1 << " " << m << " " << d << endl;
+    } else if (D == d) {
+        d = 1;
+        cout << y << " " << m + 1 << " " << d << endl;
     } else {
-        over_d = d / D;
-        d = d % D;
-        m += over_d;
-        
-        over_m = m / M;
-        m = m % M;
-        y += over_m;
+        cout << y << " " << m << " " << d + 1 << endl;
     }
 
-    cout << y << " " << m << " " << d << endl;
     return 0;
 }
