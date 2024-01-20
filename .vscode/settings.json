@@ -6,6 +6,7 @@
         "chrono": "cpp",
         "variant": "cpp",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "iterator": "cpp"
     }
 }
