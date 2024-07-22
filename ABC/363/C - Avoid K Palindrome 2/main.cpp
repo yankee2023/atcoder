@@ -18,20 +18,40 @@ int main()
     string S;
     cin >> S;
     
-    int count = 0;
-    int ans = S.length();
-    for (int i = 0; i <= N-K; i++)
+    vector<int> a;
+    for (int i = 0; i < N; i++)
     {
-        for (int j = 1; j <= K; j++)
+        a.push_back(((int)(S[i]-'a')));
+    }
+    sort(a.begin(), a.end());
+    int ans = 0;
+    bool ok, flag;
+    do
+    {
+        ok = true;
+        for (int i = 0; i <= N-K; i++)
         {
-            if (S[i+j] == S[j+K+1-j])
+            flag = true;
+            for (int j = 0; j < K; j++)
             {
-                count++;
+                if (a[i+j] != a[i+K-1-j])
+                {
+                    flag = false;
+                }
+                if (flag)
+                {
+                    ok = false;
+                }
             }
         }
-    }
+        if (ok)
+        {
+            ans++;
+        }
+        
+    } while (next_permutation(a.begin(), a.end()));
     
-
+    cout << ans;
 
     return 0;
 }
