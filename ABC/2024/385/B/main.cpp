@@ -17,7 +17,7 @@ int main()
 {
     int h, w, x, y;
     cin >> h >> w >> x >> y;
-    vector<vector<int>> s(w, vector<int>(h, ' '));
+    vector<vector<char>> s(w+1, vector<char>(h+1, ' '));
     for (int i = 0; i < h; i++)
     {
         for (int j = 0; j < w; j++)
@@ -28,12 +28,12 @@ int main()
     string t;
     cin >> t;
 
-    vector<vector<int>> ans_vec(w, vector<int>(h, false));
+    vector<vector<bool>> ans_vec(w, vector<bool>(h, false));
     for (int i = 0; i < t.length(); i++)
     {
         if (t[i] == 'U')
         {
-            if (s.at(x-1).at(y) == '.') x--;
+            if (s[x-1][y] == '.') x--;
             else if (s.at(x-1).at(y) == '@')
             {
                 ans_vec.at(x-1).at(y) = true;
@@ -74,7 +74,7 @@ int main()
         }
     }
     
-    cout << x << " " << y << " " << ans_count;
+    cout << x << " " << y << " " << ans_count << endl;
 
     return 0;
 }
