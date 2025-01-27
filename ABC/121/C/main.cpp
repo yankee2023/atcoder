@@ -18,8 +18,12 @@ int main()
 {
     int N, M;
     cin >> N >> M;
-    vector<pair<ll, ll>> ab(N);
-    rep(i, N) cin >> ab[i].first >> ab[i].second;
+    vector<pair<ll, ll>> ab;
+    rep(i, N) {
+        ll a, b;
+        cin >> a >> b;
+        ab.push_back(make_pair(a, b));
+    }
 
     ll ans = 0;
     sort(ab.begin(), ab.end());
