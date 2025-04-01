@@ -15,6 +15,8 @@ using ll = long long;
 
 int main()
 {
-    
+    int n;
+    string s;
+    cin >> n >> s;
     return 0;
 }
