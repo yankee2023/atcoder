@@ -18,24 +18,23 @@ int main()
 {
     int n, k;
     cin >> n >> k;
-    
+
     vector<ll> A(n+1, 0);
     bool isFirst = false;
     ll tmp = 0;
     rep(i,n+1) {
         if (i < k) A[i] = 1;
         else {
-            if (!isFirst) {
+            if (!isFirst) { // 初回のみ合計値を出す
                 int kCopy = k;
                 while (kCopy != 0) {
                     A[i] += A[i-kCopy];
                     kCopy--;
-
                 }
                 A[i] %= INF;
                 isFirst = true;
                 tmp = A[i];
-            } else {
+            } else {    // 一番古い値を引いて、新しい値を足す
                 tmp -= A[i-k-1];
                 tmp += A[i-1];
                 A[i] = tmp % INF;
@@ -43,7 +42,6 @@ int main()
         }
     }
 
-    ll ans = A[n];
     cout << A[n] % INF << endl;
     return 0;
 }
