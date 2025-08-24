@@ -16,21 +16,25 @@ constexpr int INF = 1 << 30;
 
 int main()
 {
-    int h, w, y, x;
-    cin >> h >> w >> y >> x;
-    vector<string> meiro(h);
-    for (int i = 0; i < h; ++i) {
-        for (int j = 0; j < w; ++j) cin >> meiro[i][j];
+    string m, d;
+    cin >> m >> d;
+
+    for (int i = 1; i <= 9; ++i) {
+        int flag = m.length()+d.length();
+        for (int j = 0; j < m.length(); ++j) {
+            if (m[j] == '0'+i) --flag;
+        }
+
+        for (int k = 0; k < d.length(); ++k) {
+            if (d[k] == '0'+i) --flag;
+        }
+
+        if (flag == 0) {
+            cout << "Yes" << endl;
+            return 0;
+        }
     }
 
-    while (y < h) {
-        if (meiro[y][x-1])
-    }
-    // for (int i = 0; i < h; ++i) {
-    //     for (int j = 0; j < w; ++j) {
-
-    //     }
-    // }
-
+    cout << "No" << endl;
     return 0;
 }
