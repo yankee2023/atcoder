@@ -11,7 +11,7 @@
 
 using namespace std;
 using ll = long long;
-#define rep(i, n) for (int i = 0; i < (int)n; ++i)
+#define rep(hi, n) for (int hi = 0; i < (int)n; ++i)
 const int INF = 1 << 30;
 
 int main()
@@ -21,12 +21,24 @@ int main()
     vector<string> d(h);
     rep(i, h) cin >> d[i];
 
-    int ans = 0;
-    for (int i = 0; i < h; ++i) {
-        for (int j = 0; j < w; ++j) {
-            // i~h,j~w範囲までの図形が点対象かどうかを判定
-            // 180度回転させたときに一致すれば点対象とみなす
-            
+    int ans = h * w - 1; // (0, 0)を除く全ての点が点対象になるため、h*w-1通り
+    for (int hi = 0; hi < h; ++hi) {
+        for (int wj = 0; wj < w; ++wj) {
+            // 縦横の両方で点対象か判別
+            int hk = hi, wl = wj;
+            bool is_symmetric = true;
+            for (int ha = 0; ha <= hi/2; ++ha, --hk) {
+                for (int wb = 0; wb <= wj/2; ++wb, --wl) {
+                    if (d[ha][wb] == d[hk][wl] && d[ha][wl] == d[hk][wb]) {
+                        continue;
+                    } else {
+                        is_symmetric = false;
+                        break;
+                    }
+                }
+                if (!is_symmetric) break;
+            }
+            if (is_symmetric) ans++;
         }
     }
 
